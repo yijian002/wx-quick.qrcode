@@ -16,6 +16,68 @@
   color: #aaa;
 }
 
-.usermotto {
-  margin-top: 200px;
+.camera {
+  width: 100%;
+  height: auto;
+  padding: 5px 0;
+  border-top: 1px solid #ccc;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 90;
+  text-align: center;
+  background: rgba(0,0,0,.5);
+}
+
+.camera botton {
+  font: inherit;
+	margin: 0;
+  font-weight: 300;
+	letter-spacing: 0.01em;
+  display: inline-block;
+	zoom: 1;
+	white-space: nowrap;
+  line-height: normal;
+	vertical-align: middle;
+	text-align: center;
+	cursor: pointer;
+	user-select: none;
+  font-family: inherit;
+	font-size: 100%;
+	padding: .5em 2em;
+	background: rgb(66, 184, 221);
+	text-decoration: none;
+  text-transform: none;
+  color: white;
+	border-radius: 4px;
+	text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.qrcodes {
+  margin-top: 20px;
+}
+
+.qrcodes ul {
+  width: 660rpx;
+  height: auto;
+  margin: 0 auto;
+  list-style: none;
+  display: block;
+}
+
+.qrcodes li {
+  color: #fff;
+  font-size: 14px;
+  height: 30px;
+  line-height: 30px;
+  margin: 0;
+  padding: 0 10px;
+  overflow: hidden;
+  display: block;
+  word-break:break-all;
+  background: rgba(28, 184, 65, .8);
+}
+
+.qrcodes li:nth-child(odd) {
+  background: rgba(223, 117, 20, .8);
 }

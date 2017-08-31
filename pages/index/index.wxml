@@ -1,13 +1,17 @@
 <!--index.wxml-->
+
 <view class="container">
-  <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
+
+  <view class="userinfo" wx:if="{{hasUserInfo}}">
+    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
   </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
+
+  <view class="camera"><botton bindtap="cameraQrcode">扫描二维码</botton></view>
+
+  <view class="qrcodes">
+    <ul>
+      <li wx:for="{{qrcodeList}}">{{index+1}}: {{item.content}}</li>
+    </ul>
   </view>
 </view>
