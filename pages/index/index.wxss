@@ -1,4 +1,8 @@
 /**index.wxss**/
+.container {
+  padding-bottom: 55px;
+}
+
 .userinfo {
   display: flex;
   flex-direction: column;
@@ -53,12 +57,12 @@
 	text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
 }
 
-.qrcodes {
+/* .qrcodes {
   margin-top: 20px;
-}
+} */
 
 .qrcodes ul {
-  width: 660rpx;
+  width: 100%;
   height: auto;
   margin: 0 auto;
   list-style: none;
@@ -68,16 +72,71 @@
 .qrcodes li {
   color: #fff;
   font-size: 14px;
-  height: 30px;
   line-height: 30px;
+  height: auto;
+  min-height: 100rpx;
   margin: 0;
-  padding: 0 10px;
-  overflow: hidden;
+  padding: 0;
+  /* overflow: hidden; */
   display: block;
   word-break:break-all;
-  background: rgba(28, 184, 65, .8);
+  background: #000;
 }
 
-.qrcodes li:nth-child(odd) {
-  background: rgba(223, 117, 20, .8);
+.qrcodes li >div {
+  font: 0;
+  /* float: left;  */
+  display: inline-block;
+  vertical-align: top;
+}
+
+.qrcodes li .date {
+  width: 120rpx;
+  height: auto;
+  line-height: 18px;
+  text-align: right;
+  background: #000;
+  padding: 30rpx 0;
+}
+
+.qrcodes li .date .month {
+  font-size: 12px;
+  color: #818485;
+  display: block;
+  margin-right: 20rpx;
+}
+
+.qrcodes li .date .day {
+  font-size: 18px;
+  font-weight: 500;
+  margin-right: 20rpx;
+}
+
+.qrcodes li .content {
+  height: auto;
+  width: 630rpx;
+  background: #e33b19;
+  border-bottom: 1px solid #e6573a;
+  padding: 38rpx 0;
+}
+
+.qrcodes li .content .it {
+  margin-left: 16rpx;
+}
+
+.qrcodes li .content span:first-child {
+  color: #f0ad9f;
+  font-size: 11px;
+  display: block;
+  float: left;
+  margin-left: 12rpx;
+}
+
+.qrcodes li .content span:last-child {
+  font-size: 16px;
+  font-weight: 500;
+  width: 500rpx;
+  display: block;
+  margin-left: 12rpx;
+  float: left;
 }

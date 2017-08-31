@@ -2,16 +2,21 @@
 
 <view class="container">
 
-  <view class="userinfo" wx:if="{{hasUserInfo}}">
+  <!-- <view class="userinfo" wx:if="{{hasUserInfo}}">
     <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
     <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-  </view>
+  </view> -->
 
   <view class="camera"><botton bindtap="cameraQrcode">扫描二维码</botton></view>
 
   <view class="qrcodes">
     <ul>
-      <li wx:for="{{qrcodeList}}">{{index+1}}: {{item.content}}</li>
+      <li wx:for="{{qrcodeList}}" wx:key="list">
+        <div class="date"><div class="month">{{item[0].month}}月</div><div class="day">{{item[0].day}}</div></div>
+        <div class="content">
+          <div class="it" wx:for="{{item}}" wx:key="it"><span>{{item.time}}</span><span>{{item.content}}</span></div>
+        </div>
+      </li>
     </ul>
   </view>
 </view>
