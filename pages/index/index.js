@@ -19,7 +19,7 @@ const setList = list => {
     for (let k in nlist) {
         arr.push(nlist[k]);
     }
-    console.log(arr)
+    // console.log(arr)
     return arr;
     
 }
@@ -32,11 +32,10 @@ Page({
         userInfo: {},
         qrcodeList: []
     },
-    cameraQrcode: function() {
+    cameraQrcode: () => {
         wx.scanCode({
             onlyFromCamera: true,
             success: (res) => {
-              let times = new Date();
               qrcode_list = [{ 
                 content: res.result,
                 year: times.getFullYear(),
@@ -53,7 +52,7 @@ Page({
             }
         });
     },
-    onLoad: function() {
+    onLoad: () => {
         if (app.globalData.userInfo) {
             this.setData({
                 userInfo: app.globalData.userInfo,
@@ -68,13 +67,15 @@ Page({
             }
         }
 
+    },
+    onReady: () => {
         wx.getStorage({
-          key: config.CACHE.list_qrcodes,
-          success: function(res) {
-              qrcode_list = res.data || []
-              this.setData({ qrcodeList: setList(qrcode_list) });
-          }
+            key: config.CACHE.list_qrcodes,
+            success: function (res) {
+                qrcode_list = res.data || []
+                console.log(qrcode_list)
+                this.setData({ qrcodeList: setList(qrcode_list) });
+            }
         })
-
     }
 })
