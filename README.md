@@ -1,1 +1,1 @@
-# Quick QRCode
+# Just demo
